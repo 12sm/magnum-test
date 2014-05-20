@@ -41,8 +41,6 @@ set :default_stage, "staging"
 set :scm, :git
 set :branch, 'master'								# Set the Branch
 set :repo_url, 'https://github.com/12sm/magnum-test'          	# Set the Application Git URL
-set :git_http_username, 'michael@12southmusic.com'						# Set git usernmae
-set :git_http_password, '12Shoup!'						# Set git password
 set :deploy_to, '/home/deployer/magnum-test/'						# Set location to deploy in server 
 set :deploy_via, :copy
 set :port, 8000
