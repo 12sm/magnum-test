@@ -4,9 +4,16 @@
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
 # Don't declare `role :all`, it's a meta role
-role :app, %w{deploy@example.com}
-role :web, %w{deploy@example.com}
-role :db,  %w{deploy@example.com}
+
+role :app, %w{deployer@107.170.14.65}
+role :web, %w{deployer@107.170.14.65}
+
+server '107.170.14.65', user: 'deployer', port: '202', roles: %w{web app}, my_property: :my_value		
+set :ssh_options, {
+    keys: %w(/home/magnum/.ssh/id_rsa),
+    auth_methods: %w(publickey password)
+  }
+
 
 # Extended Server Syntax
 # ======================
@@ -14,7 +21,6 @@ role :db,  %w{deploy@example.com}
 # definition into the server list. The second argument
 # something that quacks like a hash can be used to set
 # extended properties on the server.
-server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 
 # you can set custom ssh options
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options
