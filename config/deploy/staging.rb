@@ -5,10 +5,10 @@
 # unless any hosts have the primary property set.
 # Don't declare `role :all`, it's a meta role
 
-role :app, %w{deployer@107.170.14.65}
-role :web, %w{deployer@107.170.14.65}
+role :app, %w{root@107.170.14.65}
+role :web, %w{root@107.170.14.65}
 
-server '107.170.14.65', user: 'deployer', port: '202', roles: %w{web app}, my_property: :my_value		
+server '107.170.14.65', user: 'root', port: '202', roles: %w{web app}, my_property: :my_value		
 set :ssh_options, {
     keys: %w(/home/magnum/.ssh/id_rsa),
     auth_methods: %w(publickey password)
