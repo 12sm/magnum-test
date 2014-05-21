@@ -41,7 +41,7 @@ set :default_stage, "staging"
 set :scm, :git
 set :branch, 'master'								# Set the Branch
 set :repo_url, 'https://github.com/12sm/magnum-test'          	# Set the Application Git URL
-set :deploy_to, '/var/ww/html/magnum-test/'						# Set location to deploy in server 
+set :deploy_to, '/var/www/html/magnum-test/'						# Set location to deploy in server 
 set :deploy_via, :copy
 set :port, 8000
 set :pty, true
